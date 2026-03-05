@@ -1,1 +1,460 @@
-# cellsh0215.github.io
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Leftover Buddy</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#fffdf6;
+color:#333;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:white;
+box-shadow:0 3px 12px rgba(0,0,0,0.05);
+}
+
+nav h2{
+color:#2a9d8f;
+}
+
+nav a{
+text-decoration:none;
+margin-left:20px;
+color:#555;
+font-weight:500;
+}
+
+/* HERO */
+
+.hero{
+padding:120px 10%;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+background:linear-gradient(120deg,#e6f7f3,#fffdf6);
+}
+
+.hero h1{
+font-size:52px;
+color:#2a9d8f;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:25px;
+}
+
+.hero button{
+padding:15px 35px;
+background:#f4a261;
+border:none;
+color:white;
+border-radius:40px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+}
+
+.hero button:hover{
+transform:scale(1.05);
+}
+
+.hero img{
+width:100%;
+border-radius:20px;
+}
+
+/* STATS */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+padding:50px 10%;
+background:#2a9d8f;
+color:white;
+text-align:center;
+}
+
+.stat h2{
+font-size:36px;
+}
+
+/* SECTION */
+
+section{
+padding:90px 10%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:50px;
+}
+
+.section-title h2{
+font-size:38px;
+color:#2a9d8f;
+}
+
+/* PROBLEM */
+
+.problem{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.problem img{
+width:100%;
+border-radius:20px;
+}
+
+/* USER CARDS */
+
+.user-choice{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+}
+
+.user-card{
+background:white;
+width:220px;
+padding:30px;
+text-align:center;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+transition:.3s;
+cursor:pointer;
+}
+
+.user-card:hover{
+transform:translateY(-10px);
+background:#f0fbf8;
+}
+
+/* APP MOCKUPS */
+
+.screens{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+}
+
+.phone{
+width:260px;
+height:520px;
+background:#222;
+border-radius:40px;
+padding:12px;
+box-shadow:0 25px 40px rgba(0,0,0,0.3);
+}
+
+.screen{
+background:#f8fff9;
+border-radius:25px;
+height:100%;
+padding:18px;
+}
+
+.app-title{
+color:#2a9d8f;
+font-weight:700;
+margin-bottom:10px;
+}
+
+.item{
+background:white;
+border-radius:10px;
+padding:10px;
+margin-bottom:8px;
+font-size:14px;
+display:flex;
+justify-content:space-between;
+}
+
+/* TESTIMONIAL */
+
+.testimonial{
+background:#fef3e8;
+padding:80px 20px;
+text-align:center;
+font-style:italic;
+}
+
+.testimonial span{
+display:block;
+margin-top:15px;
+font-weight:600;
+font-style:normal;
+}
+
+/* SIGNUP */
+
+.signup{
+text-align:center;
+}
+
+.signup input{
+padding:14px;
+border-radius:30px;
+border:1px solid #ccc;
+width:260px;
+margin-right:10px;
+}
+
+.signup button{
+padding:14px 30px;
+background:#2a9d8f;
+color:white;
+border:none;
+border-radius:30px;
+cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+background:#264653;
+color:#ddd;
+padding:40px 10%;
+text-align:center;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.problem{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<h2>Leftover Buddy</h2>
+
+<div>
+<a href="#">Features</a>
+<a href="#">Impact</a>
+<a href="#">Join</a>
+</div>
+
+</nav>
+
+<section class="hero">
+
+<div>
+
+<h1>Waste Less. Save More.</h1>
+
+<p>
+Scan barcodes or manually add food items to track expiration dates
+and reduce food waste at home.
+</p>
+
+<button onclick="scrollSignup()">Join the Waitlist</button>
+
+</div>
+
+<img src="https://images.unsplash.com/photo-1506617420156-8e4536971650">
+
+</section>
+
+
+<div class="stats">
+
+<div class="stat">
+<h2>1/3</h2>
+<p>Food globally wasted</p>
+</div>
+
+<div class="stat">
+<h2>8%</h2>
+<p>Global emissions from food waste</p>
+</div>
+
+<div class="stat">
+<h2>$1T</h2>
+<p>Food wasted each year</p>
+</div>
+
+<div class="stat">
+<h2>2030</h2>
+<p>Goal to halve food waste</p>
+</div>
+
+</div>
+
+
+<section>
+
+<div class="section-title">
+<h2>The Problem</h2>
+</div>
+
+<div class="problem">
+
+<p>
+Most food waste happens at home because people forget what they bought
+or when food expires. Leftover Buddy helps track everything in your
+fridge so nothing goes to waste.
+</p>
+
+<img src="https://images.unsplash.com/photo-1542838132-92c53300491e">
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="section-title">
+<h2>Who Is It For?</h2>
+</div>
+
+<div class="user-choice">
+
+<div class="user-card">
+🎓<br><br>
+Students managing tight budgets
+</div>
+
+<div class="user-card">
+👨‍👩‍👧<br><br>
+Young families reducing waste
+</div>
+
+<div class="user-card">
+🌍<br><br>
+Eco-conscious households
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="section-title">
+<h2>App Preview</h2>
+</div>
+
+<div class="screens">
+
+<div class="phone">
+<div class="screen">
+<div class="app-title">My Fridge</div>
+<div class="item"><span>Milk</span><span>2 days</span></div>
+<div class="item"><span>Spinach</span><span>3 days</span></div>
+<div class="item"><span>Chicken</span><span>1 day</span></div>
+</div>
+</div>
+
+<div class="phone">
+<div class="screen">
+<div class="app-title">Scan Barcode</div>
+<p>📷 Scan product</p>
+<p>Auto-detect expiry date</p>
+</div>
+</div>
+
+<div class="phone">
+<div class="screen">
+<div class="app-title">Impact</div>
+<p>You saved 6 meals this month</p>
+<p>Reduced 4kg CO₂</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="testimonial">
+
+<p>
+“Leftover Buddy helped my family stop throwing away food every week.
+It’s simple and actually saves money.”
+</p>
+
+<span>— Priya Sharma</span>
+
+</section>
+
+
+<section class="signup" id="signup">
+
+<div class="section-title">
+<h2>Get Early Access</h2>
+</div>
+
+<input type="email" placeholder="Enter your email">
+<button onclick="subscribe()">Sign Up</button>
+
+</section>
+
+
+<footer>
+
+<h3>Leftover Buddy</h3>
+
+<p>Reducing food waste through smarter food tracking.</p>
+
+<p>© 2026 Leftover Buddy</p>
+
+</footer>
+
+
+<script>
+
+function scrollSignup(){
+document.getElementById("signup").scrollIntoView({behavior:"smooth"});
+}
+
+function subscribe(){
+alert("Thanks for joining the Leftover Buddy waitlist!");
+}
+
+</script>
+
+</body>
+</html>
