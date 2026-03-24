@@ -18,8 +18,6 @@ background:#f7fbf8;
 color:#333;
 }
 
-/* PAGE WIDTH (GOOD FOR PDF EXPORT) */
-
 .container{
 max-width:1000px;
 margin:auto;
@@ -32,12 +30,10 @@ padding:40px;
 font-size:72px;
 font-weight:800;
 color:#1f7a3d;
-margin-bottom:10px;
 }
 
 .subtitle{
-font-size:18px;
-margin-bottom:25px;
+margin-bottom:30px;
 }
 
 /* SCANNER */
@@ -47,7 +43,7 @@ background:#e8f5e9;
 padding:40px;
 border-radius:12px;
 text-align:center;
-margin-bottom:35px;
+margin-bottom:30px;
 }
 
 .scan-btn{
@@ -72,7 +68,7 @@ background:white;
 padding:25px;
 border-radius:10px;
 box-shadow:0 4px 12px rgba(0,0,0,0.08);
-margin-bottom:50px;
+margin-bottom:40px;
 }
 
 .food{
@@ -80,11 +76,45 @@ display:flex;
 justify-content:space-between;
 padding:8px 0;
 border-bottom:1px solid #eee;
-font-size:15px;
 }
 
-.food:last-child{
+.food:last-child{border:none;}
+
+/* RECIPES */
+
+.recipe-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+margin-bottom:50px;
+}
+
+.recipe-card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+transition:.3s;
+}
+
+.recipe-card:hover{
+transform:translateY(-6px);
+}
+
+.match{
+color:#1f7a3d;
+font-weight:600;
+margin:8px 0;
+}
+
+.recipe-card button{
+margin-top:10px;
+padding:8px 15px;
 border:none;
+border-radius:20px;
+background:#27ae60;
+color:white;
+cursor:pointer;
 }
 
 /* STATS */
@@ -93,7 +123,7 @@ border:none;
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:20px;
-margin-bottom:50px;
+margin-bottom:40px;
 }
 
 .stat{
@@ -104,22 +134,18 @@ border-radius:10px;
 text-align:center;
 }
 
-.stat h3{
-font-size:30px;
-}
-
 /* FEATURES */
 
 .features{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:20px;
-margin-bottom:50px;
+margin-bottom:40px;
 }
 
 .feature{
 background:white;
-padding:25px;
+padding:20px;
 border-radius:10px;
 box-shadow:0 4px 12px rgba(0,0,0,0.08);
 transition:.3s;
@@ -129,13 +155,13 @@ transition:.3s;
 transform:translateY(-6px);
 }
 
-/* GREEN MAP */
+/* MAP */
 
 .map{
 background:#e8f5e9;
-padding:30px;
+padding:25px;
 border-radius:10px;
-margin-bottom:50px;
+margin-bottom:40px;
 }
 
 .map-grid{
@@ -157,12 +183,12 @@ border-radius:4px;
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:20px;
-margin-bottom:50px;
+margin-bottom:40px;
 }
 
 .summary-card{
 background:white;
-padding:25px;
+padding:20px;
 border-radius:10px;
 text-align:center;
 box-shadow:0 4px 12px rgba(0,0,0,0.08);
@@ -174,7 +200,7 @@ box-shadow:0 4px 12px rgba(0,0,0,0.08);
 background:#f1f8f4;
 padding:25px;
 border-radius:10px;
-margin-bottom:50px;
+margin-bottom:40px;
 }
 
 .member{
@@ -189,7 +215,7 @@ padding:6px 0;
 background:#e8f5e9;
 padding:25px;
 border-radius:10px;
-margin-bottom:50px;
+margin-bottom:40px;
 text-align:center;
 }
 
@@ -199,13 +225,13 @@ font-weight:700;
 color:#1f7a3d;
 }
 
-/* TESTIMONIALS */
+/* TESTIMONIAL */
 
 .testimonials{
 display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:20px;
-margin-bottom:50px;
+margin-bottom:40px;
 }
 
 .quote{
@@ -220,7 +246,7 @@ font-style:italic;
 
 .signup{
 text-align:center;
-margin-bottom:40px;
+margin-bottom:30px;
 }
 
 .signup input{
@@ -247,8 +273,6 @@ font-size:13px;
 color:#666;
 }
 
-/* PRINT OPTIMISATION */
-
 @media print{
 body{background:white;}
 }
@@ -261,155 +285,114 @@ body{background:white;}
 <div class="container">
 
 <div class="title">Leftover Buddy</div>
-<div class="subtitle">Track food, reduce waste, and save money with your roommates.</div>
+<p class="subtitle">Reduce food waste, save money, and cook smarter with your roommates.</p>
 
 <section class="scanner">
-
 <h2>Quick Add</h2>
-
 <button class="scan-btn" onclick="scanBarcode()">Scan a Barcode</button>
-
-<p style="margin-top:10px;font-size:14px;">Prototype scanner for adding groceries instantly</p>
-
 </section>
 
 <section class="fridge">
-
 <h2>My Fridge</h2>
 
-<div class="food">🥛 Milk <span>Expires in 2 days</span></div>
-<div class="food">🧀 Cheddar Cheese <span>5 days</span></div>
-<div class="food">🍗 Chicken Breast <span>1 day</span></div>
+<div class="food">🥛 Milk <span>2 days</span></div>
+<div class="food">🧀 Cheese <span>5 days</span></div>
+<div class="food">🍗 Chicken <span>1 day</span></div>
 <div class="food">🥓 Bacon <span>3 days</span></div>
 <div class="food">🥬 Spinach <span>2 days</span></div>
 <div class="food">🍅 Tomatoes <span>4 days</span></div>
 <div class="food">🥚 Eggs <span>9 days</span></div>
 <div class="food">🍞 Bread <span>3 days</span></div>
-<div class="food">🧈 Butter <span>15 days</span></div>
-
-</section>
-
-<section class="stats">
-
-<div class="stat"><h3>1/3</h3><p>Food wasted globally</p></div>
-<div class="stat"><h3>8%</h3><p>Emissions from food waste</p></div>
-<div class="stat"><h3>$1T</h3><p>Food wasted yearly</p></div>
-<div class="stat"><h3>2030</h3><p>Global reduction goal</p></div>
 
 </section>
 
 <section>
+<h2>Recommended Recipes</h2>
+<p style="margin-bottom:10px;">Based on your fridge items</p>
 
+<div class="recipe-grid">
+
+<div class="recipe-card">
+<h3>🍝 Chicken Pasta</h3>
+<p>Chicken, Milk, Cheese</p>
+<p class="match">3/4 ingredients available</p>
+<button>View Recipe</button>
+</div>
+
+<div class="recipe-card">
+<h3>🥬 Spinach Omelette</h3>
+<p>Eggs, Spinach, Cheese</p>
+<p class="match">3/3 ingredients available</p>
+<button>View Recipe</button>
+</div>
+
+<div class="recipe-card">
+<h3>🍅 Tomato Toast</h3>
+<p>Bread, Tomatoes, Butter</p>
+<p class="match">3/3 ingredients available</p>
+<button>View Recipe</button>
+</div>
+
+</div>
+
+</section>
+
+<section class="stats">
+<div class="stat"><h3>1/3</h3><p>Food wasted globally</p></div>
+<div class="stat"><h3>8%</h3><p>Emissions</p></div>
+<div class="stat"><h3>$1T</h3><p>Wasted yearly</p></div>
+<div class="stat"><h3>2030</h3><p>Goal</p></div>
+</section>
+
+<section>
 <h2>The Problem</h2>
-
-<p>
-Students often waste food because groceries get forgotten in shared kitchens.
-Leftover Buddy helps roommates track items, expiry dates, and shared groceries
-to reduce waste and save money.
-</p>
-
+<p>Students waste food due to poor tracking in shared kitchens.</p>
 </section>
 
 <section class="features">
-
-<div class="feature">
-<h3>Barcode Scanner</h3>
-<p>Add groceries instantly by scanning the product barcode.</p>
-</div>
-
-<div class="feature">
-<h3>Green Action Map</h3>
-<p>See how your household compares with nearby users.</p>
-</div>
-
-<div class="feature">
-<h3>Monthly Summary</h3>
-<p>Track money saved and food rescued each month.</p>
-</div>
-
+<div class="feature"><h3>Scanner</h3><p>Add food instantly</p></div>
+<div class="feature"><h3>Eco Map</h3><p>Track impact</p></div>
+<div class="feature"><h3>Summary</h3><p>Track savings</p></div>
 </section>
 
 <section class="map">
-
 <h2>Green Action Map</h2>
-
-<p>Community eco-impact this week</p>
-
 <div class="map-grid">
-
 <div></div><div></div><div></div><div></div><div></div><div></div>
-<div></div><div></div><div></div><div></div><div></div><div></div>
-
 </div>
-
 </section>
 
 <section class="summary">
-
-<div class="summary-card">
-<h3>£52</h3>
-<p>Money saved this month</p>
-</div>
-
-<div class="summary-card">
-<h3>14</h3>
-<p>Meals rescued</p>
-</div>
-
-<div class="summary-card">
-<h3>9kg</h3>
-<p>CO₂ emissions reduced</p>
-</div>
-
+<div class="summary-card"><h3>£52</h3><p>Saved</p></div>
+<div class="summary-card"><h3>14</h3><p>Meals</p></div>
+<div class="summary-card"><h3>9kg</h3><p>CO₂</p></div>
 </section>
 
 <section class="roommates">
-
 <h2>Roommates</h2>
-
-<div class="member">Alex (You)</div>
-<div class="member">Jamie – Added groceries</div>
-<div class="member">Chris – Checked expiry dates</div>
-<div class="member">Taylor – Shared leftover pasta</div>
-
+<div class="member">Alex</div>
+<div class="member">Jamie</div>
+<div class="member">Chris</div>
 </section>
 
 <section class="report">
-
 <h2>Waste Reduction Report</h2>
-
-<p>This month you prevented:</p>
-
 <div class="co2" id="co2">0 kg CO₂</div>
-
 </section>
 
 <section class="testimonials">
-
-<div class="quote">
-“Leftover Buddy stopped our student house from throwing away loads of food.”
-</div>
-
-<div class="quote">
-“We save around £40 a month just by tracking our fridge.”
-</div>
-
+<div class="quote">“Saved us loads of money.”</div>
+<div class="quote">“We waste way less food now.”</div>
 </section>
 
 <section class="signup">
-
-<h2>Join the Waitlist</h2>
-
-<input placeholder="Enter email">
-<button>Sign Up</button>
-
+<h2>Join</h2>
+<input placeholder="Email">
+<button onclick="subscribe()">Sign Up</button>
 </section>
 
 <footer>
-
-<p>Leftover Buddy — Smarter food tracking for shared homes.</p>
-<p>© 2026</p>
-
+<p>© 2026 Leftover Buddy</p>
 </footer>
 
 </div>
@@ -417,14 +400,17 @@ to reduce waste and save money.
 <script>
 
 function scanBarcode(){
-alert("Prototype scanner — barcode detected and item added!");
+alert("Barcode scanned! Item added.");
+}
+
+function subscribe(){
+alert("Signed up!");
 }
 
 let co2=0;
-
-setInterval(function(){
-co2 += Math.random()*0.2;
-document.getElementById("co2").innerText = co2.toFixed(1) + " kg CO₂";
+setInterval(()=>{
+co2+=Math.random()*0.2;
+document.getElementById("co2").innerText=co2.toFixed(1)+" kg CO₂";
 },800);
 
 </script>
